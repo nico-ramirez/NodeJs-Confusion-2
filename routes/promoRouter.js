@@ -9,10 +9,10 @@ promoRouter.use(bodyParser.json());
 promoRouter.route('/')
 .get((req,res,next) => {
     Promotions.find({})
-    .then((promtions) => {
+    .then((promotions) => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
-        res.json(promtions);
+        res.json(promotions);
     }, (err) => next(err))
     .catch((err) => next(err));
 })
